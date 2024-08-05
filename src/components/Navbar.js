@@ -16,7 +16,7 @@ export default function Navbar(props) {
               src="https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-840x1024-vhmauxp6.png"
               className="h-8"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap">
+            <span className="self-center text-sky-500 text-2xl font-semibold whitespace-nowrap">
               {props.title}
             </span>
           </a>

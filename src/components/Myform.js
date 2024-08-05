@@ -4,6 +4,13 @@ export default function Myform(props) {
   const handleClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    document.title = "WOOoO";
+    // setInterval(() => {
+    //   document.title = "weeeeee"; //Flashy title banauna
+    // }, 4000);
+    // setInterval(() => {
+    //   document.title = "WAUUUU";
+    // }, 3000);
   };
   const handleChange = (event) => {
     setText(event.target.value);
@@ -33,6 +40,7 @@ export default function Myform(props) {
           <button
             className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
             onClick={handleClick}
+            type="button"
           >
             {props.butName}
           </button>

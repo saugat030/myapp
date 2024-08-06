@@ -2,7 +2,9 @@ import "./App.css";
 import About from "./components/About";
 import Myform from "./components/Myform"; //component ko naam always capital.
 import Navbar from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
@@ -27,6 +29,7 @@ function App() {
           {/* place and butName are passed it as a prop in the Myform component */}
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }

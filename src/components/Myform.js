@@ -1,8 +1,9 @@
 import React, { useState } from "react"; //useState hook ho euta jun chia class based component ma thiyo function based ma use garna yo garnai parxa teti ho
-
+import { toast } from "react-toastify";
 export default function Myform(props) {
   const handleCase = () => {
     console.log(text);
+    toast.success("Text toggled!");
     let newText = text;
     if (text === text.toUpperCase()) {
       newText = text.toLowerCase();
@@ -29,7 +30,7 @@ export default function Myform(props) {
     navigator.clipboard
       .writeText(copy.value)
       .then(() => {
-        alert("Text copied to clipboard!");
+        toast.success("Text copied to clipboard!");
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);

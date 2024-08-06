@@ -74,6 +74,21 @@ export default function Myform(props) {
           </div>
         </div>
       </form>
+      <div className="w-full container mx-auto">
+        <p>{text}</p>
+      </div>
+      <div className="w-full container mx-auto">
+        <p>
+          {text.length} Characters and{" "}
+          {
+            text.split(/\s/).filter((word) => {
+              return word.length !== 0;
+            }).length
+          }{" "}
+          Words.
+        </p>
+        {/* filter (array method) ko kam = Do not count elements that has a blank i.e whos length is 0. */}
+      </div>
     </>
   );
 }

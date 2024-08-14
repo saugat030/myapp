@@ -1,9 +1,10 @@
 import React, { useState } from "react"; //useState hook ho euta jun chia class based component ma thiyo function based ma use garna yo garnai parxa teti ho
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 export default function Myform(props) {
   const handleCase = () => {
     console.log(text);
-    toast.success("Text toggled!");
+    toast.error("Text toggled!");
     let newText = text;
     if (text === text.toUpperCase()) {
       newText = text.toLowerCase();
@@ -38,12 +39,18 @@ export default function Myform(props) {
   };
   const [text, setText] = useState("Enter your text");
   //   text = "fdsfsdf"; not allowed
-  // setText = "jsjsjsj"; allowed
+  // setText  ("jsjsjsj"); allowed
   return (
     <>
       <form className="m-5 container mx-auto">
         <h1 className="text-xl text-slate-700 my-3">{props.place} :</h1>
-        <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
+        <motion.div
+          initial={{ x: -100, y: -100, opacity: 0 }}
+          animate={{ x: 100, y: 200, opacity: 1 }}
+          transition={{ duration: 3, repeat: Infinity }}
+          drag
+          className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50"
+        >
           <div className="px-4 py-2 bg-white rounded-t-lg ">
             <textarea
               rows="4"
@@ -73,7 +80,7 @@ export default function Myform(props) {
               {props.butName2}
             </button>
           </div>
-        </div>
+        </motion.div>
       </form>
       <div className="w-full container mx-auto">
         <p>{text}</p>
